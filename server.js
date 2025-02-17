@@ -22,7 +22,6 @@ const stuInfo = {
 
 // Related middleware to be able to parse the request body.
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // Makes files accessible in the "public" folder
 app.use(express.static("public"));
@@ -126,12 +125,14 @@ app.get("/solutions/projects/:id", (req, res) => {
 // POST Route
 app.post("/post-request", (req, res) => {
   const currentTime = new Date().toLocaleString();
+  console.log(req.body);
   res.json({
     studentName: stuInfo.name,
     studentId: stuInfo.stuNum,
     timestamp: currentTime,
     requestBody: req.body,
   });
+  console.log(req.body);
 });
 
 

@@ -5,7 +5,7 @@
       "src": "server.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["public/css/tailwind.css", "public/css/main.css"]
+        "includeFiles": ["public/css/tailwind.css", "public/css/main.css", "public/img/**"]
       }
     }
   ],

@@ -21,7 +21,7 @@ const stuInfo = {
 };
 
 // Related middleware to be able to parse the request body.
-app.use(express.json());
+app.use(express.text());
 
 // Makes files accessible in the "public" folder
 app.use(express.static("public"));

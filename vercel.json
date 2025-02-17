@@ -3,14 +3,24 @@
   "builds": [
     {
       "src": "server.js",
-      "use": "@vercel/node",
-      "config": { "includeFiles": ["dist/**"] }
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/css/tailwind.css",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "public/css"
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "server.js"
+      "dest": "/server.js"
+    },
+    {
+      "src": "/css/(.*)",
+      "dest": "/public/css/$1"
     }
   ]
 }
